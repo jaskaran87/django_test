@@ -1,0 +1,24 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+	{% if request.user.is_authenticated %}
+		here it is hhh
+
+		<a href="{%url 'logout' %}">Logout</a>
+	{% else %}
+		Login
+		<br>
+		Register
+	{% endif %}
+	 
+	 {% for x in data %}
+	 <div class = "{% cycle '1' '2' %}">
+	 {{x}}
+	 {% endfor %}
+{% comment "Optional note" %}
+    <p>Commented out text with 
+    </p>
+{% endcomment %}
+
+{% endblock %}
+

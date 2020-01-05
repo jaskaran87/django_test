@@ -1,0 +1,11 @@
+<form method="post" novalidate>
+{% csrf_token %}
+
+{{ Forms }} 
+<input type="submit" value="submit"> 
+<!--
+{% for field in Forms %}
+	<label class = "class" for ="{{ field.name }}"> {{ field.label }} </label>
+	{{ field }}
+{% endfor %}-->
+</form>
