@@ -49,7 +49,7 @@ class ArticleModel(forms.ModelForm):
                                                 queryset = Reporter.objects.all()
                                             )
 
-    headline = forms.CharField (
+    headline = forms.CharField(
                                 error_messages =  {
                                                     'Invaild':' headline dear', 
                                                     'required':"asdf"

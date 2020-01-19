@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'accounts',
-    'albums'
+    'albums',
+    'country',
+    'grouby_example',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,13 @@
+{% for x in object_list %}
+	{{x.name}} : <br>
+	{% for state in x.state_set.all %}
+		{{ state.name }} >>
+		{%for city in state.city_set.all %}
+			------#
+			{{ city.name }}
+		{% endfor %}	
+		<br>
+	{% endfor %}
+	</br>
+
+{% endfor %}
