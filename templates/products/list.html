@@ -5,15 +5,10 @@
 {% for obj in object_list %}
 <br/>
 <br/>
-
 <a href="{{ obj.slug_url }}"> {{ obj.title }} </a>
 <a href="{% url 'products:slug_name' slug=obj.slug %}"> {{ obj.title }} </a>
 <a href="{{ obj.slug_reverse_url }}"> {{ obj.title }} </a>
-
-
-
 <br/>
-
 <br/>
 {% endfor %}
 

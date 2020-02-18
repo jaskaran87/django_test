@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'albums',
     'country',
     'grouby_example',
+    'bootstrap_form',
 ]
 
 MIDDLEWARE = [

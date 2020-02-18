@@ -1,0 +1,48 @@
+{% extends 'base_template.html' %}
+{% block content %}
+<form method="post">
+
+{% if rec == None %}
+	name
+	<input type ="text" name = "name">
+	<br/>
+	email
+	<input type="text" name="email">
+	<br/>
+	address
+	<input type ="text" name="address">
+	<br>
+{% else %}
+	name
+	<input value='{{rec.name }}' type ="text" name = "name">
+	<br/>
+	email
+	<input value='{{rec.email }}' type="text" name="email">
+	<br/>
+	address
+	<input type ="text" value='{{ rec.address }}' name="address">
+	<br>
+{% endif %}
+<input type="submit">
+{% csrf_token %}
+</form>
+<table border="2px soild">
+<tr>	<th>Email</th> <th> Name </th> <th> Phone</th> <th> Action</th> </tr>
+{% for row in data %}
+<tr>
+	<td> {{ row.email }} </td>
+	<td> {{ row.name }} </td>
+	<td> {{ row.address }} </td>
+	<td> 
+		<a href="{% url 'boot_form:form'  %}?id={{row.id}}&method=edit">Edit</a>   
+		<a href="{% url 'boot_form:form'  %}?id={{row.id}}&method=delete">Delete</a> 
+	</td>
+<tr>
+{% endfor %}
+</table>
+
+{% endblock %}
+
+<!--
+email: {{ email|default:"None" }} , name: {{ name|default:"None" }} , phone: {{ phone|default:"None" }}
+-->

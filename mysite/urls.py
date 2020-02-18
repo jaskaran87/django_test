@@ -15,6 +15,7 @@ urlpatterns = [
     path('products/', include(("core.urls", "products"), namespace = 'products' )),
     path('country/', include('country.urls')),
     path('city/', include('grouby_example.urls')),
+    path('bootstrap_form/', include(('bootstrap_form.urls', 'bootstrap_form'), namespace="boot_form")),
 ]
 
 if settings.DEBUG:
