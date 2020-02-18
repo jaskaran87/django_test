@@ -24,7 +24,7 @@ def form(request):
 				name = request.POST.get('name'),
 				email = request.POST.get('email'),
 				address = request.POST.get('address')
-			)
+			) 
 			contact.save()
 	data = ContactUs.objects.all()	
 	return render(request, 'bootstrap_form/index.html', {'data':data , 'rec': rec })
